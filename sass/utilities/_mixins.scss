@@ -47,7 +47,7 @@
 // Image replacement
 
 @mixin img-replace($img, $w, $h, $disp: block) {
-	background-image: url('#{$path--rel}/#{$img}');
+	background-image: url('#{$path--img}#{$img}');
 	background-repeat: no-repeat;
 	width: $w;
 	height: $h;

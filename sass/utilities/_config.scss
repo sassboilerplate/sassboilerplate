@@ -22,7 +22,7 @@ $white    : #fff;
 $black    : #0b0b0b;
 $grey     : #797e83;
 
-// Flat UI Colors:
+// Flat UI Color Pallet:
 
 $turquioise: #1dcfac; 
 $green-sea: #16a085;  
@@ -90,6 +90,7 @@ $letter-space    : 1px;
 // Border radius
 
 $br--default    : .4em;
+$br--capsule    : 25px;
 $br--round      : 50%;
 
 // Transitions
@@ -98,4 +99,8 @@ $trns-duration  : .3s;
 
 // Path to Assets
 
-$path--rel      : "../img";
+$path--img        :  "../images/";
+$path--root       :  "../../";
+$path--font       :  "../fonts/";
+$path--icons      :  "../icons/";
+$path--bower      :  "../../bower/";
