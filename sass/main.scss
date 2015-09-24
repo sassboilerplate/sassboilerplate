@@ -1,0 +1,76 @@
+/* Welcome to The SASS Bloilerplate
+ * BEM + SASS + SMACSS starter v1.0
+ *
+ * Inspired by: 
+ * SMACSS http://smacss.com using BEM http://getbem.com/
+ * SASS-SMACSS starter https://github.com/jonathanpath/SASS-SMACSS
+ * Treehouse SASS Course at http://teamtreehouse.com
+ * 
+ * Author: @felipemartinin
+ * Author Website: http://felipemartinin.com
+ * Start date: 15 Sep 2015
+ *
+ *
+ * Repository Page: https://github.com/sassboilerplate/sassboilerplate
+ *
+ * Description: This is a SASS starter structure, with the focus in use
+ * the SMACSS archtecture and BEM class naming rules. SASS Boilerplate
+ * was building for you using in any projects.
+ *
+ */
+
+ 
+
+/* ---------------------------------
+ * Utilities
+ ----------------------------------*/
+
+@import "utilities/config";
+@import "utilities/helpers";
+@import "utilities/functions";
+@import "utilities/mixins";
+
+
+
+/* ---------------------------------
+ * Base
+ ----------------------------------*/
+
+@import "base/normalize";
+@import "base/base";
+@import "base/grid";
+
+
+
+/* ---------------------------------
+ * Layout
+ ----------------------------------*/
+
+@import "layout/extends";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/main";
+@import "layout/footer";
+
+
+
+
+/* ---------------------------------
+ * Modules
+ ----------------------------------*/
+
+@import "modules/extends";
+@import "modules/animations";
+@import "modules/buttons";
+@import "modules/forms";
+@import "modules/headlines";
+@import "modules/icons";
+@import "modules/images";
+
+
+
+/* ---------------------------------
+ * States
+ ----------------------------------*/
+
+ // @import "states/..";

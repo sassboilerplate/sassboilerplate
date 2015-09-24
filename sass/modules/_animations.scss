@@ -1,0 +1,158 @@
+// ==========================================================================
+// Place your animations here
+// ==========================================================================
+
+
+/*  ====  Animations Summary ====
+ *
+ * This is an a library with essential animations for you use. 
+ *
+ * Inspired in Animate.css from @daneden https://github.com/daneden/animate.css
+ *
+ *
+ * You can preview almost all animations here: http://daneden.github.io/animate.css/
+ *
+ * Custom animations (link to preview):
+ *
+ * headShake:  http://codepen.io/FelipeMartinin/pen/ZbOvxr
+ * squash: http://codepen.io/FelipeMartinin/pen/dYXabb
+ *
+ *
+ * Please check the animation trigger in _functions.scss
+ *
+ *
+
+*/
+
+
+// Animate.css defaut activator
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+
+
+/* Uncomment just the animation that you'll use in your app */
+
+
+/* 1 - Attention Seekers */
+
+@import "animations/attention_seekers/bounce";
+// @import "animations/attention_seekers/flash";
+@import "animations/attention_seekers/headShake"; // Preview: http://codepen.io/FelipeMartinin/pen/ZbOvxr
+// @import "animations/attention_seekers/jello";
+@import "animations/attention_seekers/pulse";
+// @import "animations/attention_seekers/rubberBand";
+// @import "animations/attention_seekers/shake";
+// @import "animations/attention_seekers/swing";
+// @import "animations/attention_seekers/tada";
+// @import "animations/attention_seekers/wobble";
+
+
+/* Bouncing Entrances */
+@import "animations/bouncing_entrances/bounceIn";
+@import "animations/bouncing_entrances/bounceInUp";
+@import "animations/bouncing_entrances/bounceInRight";
+@import "animations/bouncing_entrances/bounceInDown";
+@import "animations/bouncing_entrances/bounceInLeft";
+
+/* Bouncing Exits */
+@import "animations/bouncing_exits/bounceOut";
+@import "animations/bouncing_exits/bounceOutUp";
+@import "animations/bouncing_exits/bounceOutRight";
+@import "animations/bouncing_exits/bounceOutDown";
+@import "animations/bouncing_exits/bounceOutLeft";
+
+
+/* Fading Entrances */
+@import "animations/fading_entrances/fadeIn";
+@import "animations/fading_entrances/fadeInUp";
+@import "animations/fading_entrances/fadeInRight";
+@import "animations/fading_entrances/fadeInDown";
+@import "animations/fading_entrances/fadeInLeft";
+
+/* Fading Exits */
+@import "animations/fading_exits/fadeOut";
+@import "animations/fading_exits/fadeOutUp";
+@import "animations/fading_exits/fadeOutRight";
+@import "animations/fading_exits/fadeOutDown";
+@import "animations/fading_exits/fadeOutLeft";
+
+/* Flippers */
+// @import "animations/flip/flip";
+// @import "animations/flip/flipInX";
+// @import "animations/flip/flipInY";
+// @import "animations/flip/flipOutX";
+// @import "animations/flip/flipOutY";
+
+/* Lightspeed */
+// @import "animations/lightspeed/lightSpeedIn";
+// @import "animations/lightspeed/lightSpeedOut";
+
+/* Rotating Entrances */
+// @import "animations/rotating_entrances/rotateIn";
+// @import "animations/rotating_entrances/rotateInUp";
+// @import "animations/rotating_entrances/rotateInRight";
+// @import "animations/rotating_entrances/rotateInLeft";
+// @import "animations/rotating_entrances/rotateInDown";
+
+/* Rotating Exits */
+// @import "animations/rotating_exits/exitOut";
+// @import "animations/rotating_exits/exitOutUp";
+// @import "animations/rotating_exits/exitOutRight";
+// @import "animations/rotating_exits/exitOutLeft";
+// @import "animations/rotating_exits/exitOutDown";
+
+/* Sliding Entrances */ 
+// @import "animations/sliding_entrances/slideInUp";
+// @import "animations/sliding_entrances/slideInRight";
+// @import "animations/sliding_entrances/slideInLeft";
+// @import "animations/sliding_entrances/slideInDown";
+
+/* Sliding Exits */
+// @import "animations/sliding_exits/slideOutUp";
+// @import "animations/sliding_exits/slideOutRight";
+// @import "animations/sliding_exits/slideOutLeft";
+// @import "animations/sliding_exits/slideOutDown";
+
+/* Specials */
+
+// @import "animations/specials/hinge";
+// @import "animations/specials/hinge";
+// @import "animations/specials/hinge";
+// @import "animations/specials/hinge";
+
+/* Zooming Entrances */
+
+// @import "animations/rotating_entrances/rotateIn";
+// @import "animations/rotating_entrances/rotateInUp";
+// @import "animations/rotating_entrances/rotateInRight";
+// @import "animations/rotating_entrances/rotateInLeft";
+// @import "animations/rotating_entrances/rotateInDown";
+
+/* Zooming Exits */
+
+// @import "animations/rotating_exits/rotateOut";
+// @import "animations/rotating_exits/rotateOutUp";
+// @import "animations/rotating_exits/rotateOutRight";
+// @import "animations/rotating_exits/rotateOutLeft";
+// @import "animations/rotating_exits/rotateOutDown";
+
+
+
+
+ 

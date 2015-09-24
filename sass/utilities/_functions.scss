@@ -1,0 +1,197 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+// Import if Google Fonts URL is defined
+
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+// Calculate em values
+
+@function em($target, $context: $base__font-size) {
+	@return ($target / $context) * 1em;
+}
+
+// Rem calc function
+
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+@mixin rem-calc($size) {
+	font-size: $size; //Fallback in px
+	font-size: calculateRem($size);
+}
+
+// Call the color palette modifiers in color values
+
+@function palette($palette, $shade: 'base') {
+	@return map-get(map-get($color-palettes, $palette), $shade);
+}
+
+
+// Bourbon essential functions: 
+
+
+/* Linear Gradient
+
+Example:
+
+@include linear-gradient(#1e5799, #2989d8);
+@include linear-gradient(to top, #8fdce5, #3dc3d1);
+@include linear-gradient(to top, #8fdce5, #3dc3d1, $fallback: red);
+@include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+
+*/
+
+@mixin linear-gradient($pos, $g1, $g2: null,
+                       $g3: null, $g4: null,
+                       $g5: null, $g6: null,
+                       $g7: null, $g8: null,
+                       $g9: null, $g10: null,
+                       $fallback: null) {
+  // Detect what type of value exists in $pos
+  $pos-type: type-of(nth($pos, 1));
+  $pos-spec: null;
+  $pos-degree: null;
+
+  // If $pos is missing from mixin, reassign vars and add default position
+  @if ($pos-type == color) or (nth($pos, 1) == "transparent")  {
+    $g10: $g9; $g9: $g8; $g8: $g7; $g7: $g6; $g6: $g5;
+    $g5: $g4; $g4: $g3; $g3: $g2; $g2: $g1; $g1: $pos;
+    $pos: null;
+  }
+
+  @if $pos {
+    $positions: _linear-positions-parser($pos);
+    $pos-degree: nth($positions, 1);
+    $pos-spec:   nth($positions, 2);
+  }
+
+  $full: $g1, $g2, $g3, $g4, $g5, $g6, $g7, $g8, $g9, $g10;
+
+  // Set $g1 as the default fallback color
+  $fallback-color: nth($g1, 1);
+
+  // If $fallback is a color use that color as the fallback color
+  @if (type-of($fallback) == color) or ($fallback == "transparent") {
+    $fallback-color: $fallback;
+  }
+
+  background-color: $fallback-color;
+  background-image: -webkit-linear-gradient($pos-degree $full); // Safari 5.1+, Chrome
+  background-image: unquote("linear-gradient(#{$pos-spec}#{$full})");
+}
+
+/* Radial Gradient
+
+Example:
+
+@include radial-gradient(#1e5799, #3dc3d1);
+@include radial-gradient(#1e5799, #3dc3d1, $fallback: red);
+@include radial-gradient(circle at 50% 50%, #eee 10%, #1e5799 30%, #efefef);
+
+*/
+
+@mixin radial-gradient($g1, $g2,
+                       $g3: null, $g4: null,
+                       $g5: null, $g6: null,
+                       $g7: null, $g8: null,
+                       $g9: null, $g10: null,
+                       $pos: null,
+                       $shape-size: null,
+                       $fallback: null) {
+
+  $data: _radial-arg-parser($g1, $g2, $pos, $shape-size);
+  $g1:  nth($data, 1);
+  $g2:  nth($data, 2);
+  $pos: nth($data, 3);
+  $shape-size: nth($data, 4);
+
+  $full: $g1, $g2, $g3, $g4, $g5, $g6, $g7, $g8, $g9, $g10;
+
+  // Strip deprecated cover/contain for spec
+  $shape-size-spec: _shape-size-stripper($shape-size);
+
+  // Set $g1 as the default fallback color
+  $first-color: nth($full, 1);
+  $fallback-color: nth($first-color, 1);
+
+  @if (type-of($fallback) == color) or ($fallback == "transparent") {
+    $fallback-color: $fallback;
+  }
+
+  // Add Commas and spaces
+  $shape-size: if($shape-size, "#{$shape-size}, ", null);
+  $pos:        if($pos, "#{$pos}, ", null);
+  $pos-spec:   if($pos, "at #{$pos}", null);
+  $shape-size-spec: if(($shape-size-spec != " ") and ($pos == null), "#{$shape-size-spec}, ", "#{$shape-size-spec} ");
+
+  background-color:  $fallback-color;
+  background-image: -webkit-radial-gradient(unquote(#{$pos}#{$shape-size}#{$full}));
+  background-image: unquote("radial-gradient(#{$shape-size-spec}#{$pos-spec}#{$full})");
+}
+
+
+
+/* Animation trigger
+
+Example:
+
+  // Animation shorthand works the same as the CSS3 animation shorthand
+  @include animation(scale 1.0s ease-in, slide 2.0s ease);
+
+  // The above outputs the same CSS as using independent, granular mixins.
+  @include animation-name(scale, slide);
+  @include animation-duration(2s);
+  @include animation-timing-function(ease);
+  @include animation-iteration-count(infinite);;
+
+*/
+
+
+
+
+@mixin animation($animations...) {
+  @include prefixer(animation, $animations, webkit moz spec);
+}
+
+@mixin animation-name($names...) {
+  @include prefixer(animation-name, $names, webkit moz spec);
+}
+
+@mixin animation-duration($times...) {
+  @include prefixer(animation-duration, $times, webkit moz spec);
+}
+
+@mixin animation-timing-function($motions...) {
+  // ease | linear | ease-in | ease-out | ease-in-out
+  @include prefixer(animation-timing-function, $motions, webkit moz spec);
+}
+
+@mixin animation-iteration-count($values...) {
+  // infinite | <number>
+  @include prefixer(animation-iteration-count, $values, webkit moz spec);
+}
+
+@mixin animation-direction($directions...) {
+  // normal | alternate
+  @include prefixer(animation-direction, $directions, webkit moz spec);
+}
+
+@mixin animation-play-state($states...) {
+  // running | paused
+  @include prefixer(animation-play-state, $states, webkit moz spec);
+}
+
+@mixin animation-delay($times...) {
+  @include prefixer(animation-delay, $times, webkit moz spec);
+}
+
+@mixin animation-fill-mode($modes...) {
+  // none | forwards | backwards | both
+  @include prefixer(animation-fill-mode, $modes, webkit moz spec);
+}
