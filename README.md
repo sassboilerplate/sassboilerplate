@@ -1,5 +1,5 @@
 # SASS Boilerplate
- **v0.1.0**
+ **v0.1.1**
 
 This is just an SASS starter with SMACSS structure using BEM class rules for use in any project. We are certain that it will deal a great foundation for your projects.
 
