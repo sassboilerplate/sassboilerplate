@@ -5,6 +5,7 @@
 
 /*  ====  Animations Summary ====
  *
+ *
  * This is an a library with essential animations for you use. 
  *
  * Inspired in Animate.css from @daneden https://github.com/daneden/animate.css
@@ -21,11 +22,10 @@
  * Please check the animation trigger in _functions.scss
  *
  *
+ */
 
-*/
 
-
-// Animate.css defaut activator
+// Animate.css default activator, if you want active the animation directly in the HTML
 
 .animated {
   animation-duration: 1s;
@@ -42,16 +42,35 @@
 
 
 
+/* If you want to use directly in the element style, we recommend you use this way
+
+Example:
+
+  // Animation shorthand works the same as the CSS3 animation shorthand
+  @include animation(scale 1.0s ease-in, slide 2.0s ease);
+
+  // The above outputs the same CSS as using independent, granular mixins.
+  @include animation-name(scale, slide);
+  @include animation-duration(2s);
+  @include animation-timing-function(ease);
+  @include animation-iteration-count(infinite);
+
+*/
+
+
+
+
+
 /* Uncomment just the animation that you'll use in your app */
 
 
 /* 1 - Attention Seekers */
 
-@import "animations/attention_seekers/bounce";
+// @import "animations/attention_seekers/bounce";
 // @import "animations/attention_seekers/flash";
-@import "animations/attention_seekers/headShake"; // Preview: http://codepen.io/FelipeMartinin/pen/ZbOvxr
+// @import "animations/attention_seekers/headShake"; /* Preview: http://codepen.io/FelipeMartinin/pen/ZbOvxr */
 // @import "animations/attention_seekers/jello";
-@import "animations/attention_seekers/pulse";
+// @import "animations/attention_seekers/pulse";
 // @import "animations/attention_seekers/rubberBand";
 // @import "animations/attention_seekers/shake";
 // @import "animations/attention_seekers/swing";
@@ -60,33 +79,33 @@
 
 
 /* Bouncing Entrances */
-@import "animations/bouncing_entrances/bounceIn";
-@import "animations/bouncing_entrances/bounceInUp";
-@import "animations/bouncing_entrances/bounceInRight";
-@import "animations/bouncing_entrances/bounceInDown";
-@import "animations/bouncing_entrances/bounceInLeft";
+// @import "animations/bouncing_entrances/bounceIn";
+// @import "animations/bouncing_entrances/bounceInUp";
+// @import "animations/bouncing_entrances/bounceInRight";
+// @import "animations/bouncing_entrances/bounceInDown";
+// @import "animations/bouncing_entrances/bounceInLeft";
 
 /* Bouncing Exits */
-@import "animations/bouncing_exits/bounceOut";
-@import "animations/bouncing_exits/bounceOutUp";
-@import "animations/bouncing_exits/bounceOutRight";
-@import "animations/bouncing_exits/bounceOutDown";
-@import "animations/bouncing_exits/bounceOutLeft";
+// @import "animations/bouncing_exits/bounceOut";
+// @import "animations/bouncing_exits/bounceOutUp";
+// @import "animations/bouncing_exits/bounceOutRight";
+// @import "animations/bouncing_exits/bounceOutDown";
+// @import "animations/bouncing_exits/bounceOutLeft";
 
 
 /* Fading Entrances */
-@import "animations/fading_entrances/fadeIn";
-@import "animations/fading_entrances/fadeInUp";
-@import "animations/fading_entrances/fadeInRight";
-@import "animations/fading_entrances/fadeInDown";
-@import "animations/fading_entrances/fadeInLeft";
+// @import "animations/fading_entrances/fadeIn";
+// @import "animations/fading_entrances/fadeInUp";
+// @import "animations/fading_entrances/fadeInRight";
+// @import "animations/fading_entrances/fadeInDown";
+// @import "animations/fading_entrances/fadeInLeft";
 
 /* Fading Exits */
-@import "animations/fading_exits/fadeOut";
-@import "animations/fading_exits/fadeOutUp";
-@import "animations/fading_exits/fadeOutRight";
-@import "animations/fading_exits/fadeOutDown";
-@import "animations/fading_exits/fadeOutLeft";
+// @import "animations/fading_exits/fadeOut";
+// @import "animations/fading_exits/fadeOutUp";
+// @import "animations/fading_exits/fadeOutRight";
+// @import "animations/fading_exits/fadeOutDown";
+// @import "animations/fading_exits/fadeOutLeft";
 
 /* Flippers */
 // @import "animations/flip/flip";
@@ -128,9 +147,9 @@
 /* Specials */
 
 // @import "animations/specials/hinge";
-// @import "animations/specials/hinge";
-// @import "animations/specials/hinge";
-// @import "animations/specials/hinge";
+// @import "animations/specials/rollIn";
+// @import "animations/specials/rollOut";
+// @import "animations/specials/squash"; /* Preview: http://codepen.io/FelipeMartinin/pen/dYXab */
 
 /* Zooming Entrances */
 
