@@ -21,7 +21,7 @@
 	@return #{$remSize}rem;
 }
 
-@mixin rem-calc($size) {
+@mixin rem($size) {
 	font-size: $size; //Fallback in px
 	font-size: calculateRem($size);
 }

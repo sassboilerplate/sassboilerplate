@@ -29,7 +29,7 @@ h2 {
 }
 
 h3 {
-	font-size: em(18px);
+	font-size: em(24px);
 }
 
 h4 {
@@ -39,7 +39,7 @@ h4 {
 	text-transform: uppercase;
 	letter-spacing: $letter-space;
 	font-weight: $font-weight--medium;
-	font-size: em(14px);
+	font-size: em(18px);
 }
 
 a {
@@ -52,7 +52,7 @@ a {
 p {
 	margin: 0 0 em(30px, 18px);
 	font-weight: $font-weight--light;
-	font-size: em(18px);
+	font-size: $base__font-size;
 	line-height: (27px/18px);
 }
 
