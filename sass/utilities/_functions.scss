@@ -2,34 +2,50 @@
 // Functions
 // ==========================================================================
 
+
+
+/* Summary:
+ *
+ * Import Google Fonts URL
+ * Calculate EM values
+ * Calculate REM values
+ * Color palette modifiers
+ * Linear Gradient
+ * Radial Gradient
+ * Animation mixins
+ * Breakpoints mixins
+ *
+ */
+
+
 // Import if Google Fonts URL is defined
 
 @if variable-exists(font-url--google) {
   @import url($font-url--google);
 }
 
-// Calculate em values
+// Calculate EM values
 
 @function em($target, $context: $base__font-size) {
-	@return ($target / $context) * 1em;
+  @return ($target / $context) * 1em;
 }
 
-// Rem calc function
+// Calculate REM values
 
 @function calculateRem($size) {
-	$remSize: $size / 16px;
-	@return #{$remSize}rem;
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
 }
 
 @mixin rem($size) {
-	font-size: $size; //Fallback in px
-	font-size: calculateRem($size);
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
 }
 
 // Call the color palette modifiers in color values
 
 @function palette($palette, $shade: 'base') {
-	@return map-get(map-get($color-palettes, $palette), $shade);
+  @return map-get(map-get($color-palettes, $palette), $shade);
 }
 
 
@@ -156,42 +172,82 @@ Example:
 
 
 @mixin animation($animations...) {
-  @include prefixer(animation, $animations, webkit moz spec);
+  animation: ($animations);
 }
 
 @mixin animation-name($names...) {
-  @include prefixer(animation-name, $names, webkit moz spec);
+  animation-name: ($names);
 }
 
 @mixin animation-duration($times...) {
-  @include prefixer(animation-duration, $times, webkit moz spec);
+  animation-duration: ($times);
 }
 
 @mixin animation-timing-function($motions...) {
   // ease | linear | ease-in | ease-out | ease-in-out
-  @include prefixer(animation-timing-function, $motions, webkit moz spec);
+  animation-timing-function: ($motions);
 }
 
 @mixin animation-iteration-count($values...) {
   // infinite | <number>
-  @include prefixer(animation-iteration-count, $values, webkit moz spec);
+  animation-iteration-count: ($values);
 }
 
 @mixin animation-direction($directions...) {
   // normal | alternate
-  @include prefixer(animation-direction, $directions, webkit moz spec);
+  animation-direction: ($directions);
 }
 
 @mixin animation-play-state($states...) {
   // running | paused
-  @include prefixer(animation-play-state, $states, webkit moz spec);
+  animation-play-state: ($states);
 }
 
 @mixin animation-delay($times...) {
-  @include prefixer(animation-delay, $times, webkit moz spec);
+  animation-delay: ($times);
 }
 
 @mixin animation-fill-mode($modes...) {
   // none | forwards | backwards | both
-  @include prefixer(animation-fill-mode, $modes, webkit moz spec);
+  animation-fill-mode: ($modes);
+}
+
+
+
+
+/* Breakpoints
+
+Example:
+
+  .sidebar {
+    width: 60%;
+    float: left;
+    margin: 0 2% 0 0;
+    @include col-sm {
+      width: 100%;
+      float: none;
+      margin: 0;
+    }
+  }
+
+*/
+
+
+
+@mixin col-lg {
+  @media only screen and (max-width: em(1199px)) {
+    @content;
+  }
+}
+
+@mixin col-md {
+  @media only screen and (max-width: em(991px)) {
+    @content;
+  }
+}
+
+@mixin col-sm {
+  @media only screen and (max-width: em(767px)) {
+    @content;
+  }
 }

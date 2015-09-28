@@ -29,7 +29,7 @@
 
 .animated {
   @include animation-duration(1s);
-  animation-fill-mode: both;
+  @include animation-fill-mode: (both);
 
   &.infinite {
     @include animation-iteration-count(infinite);
