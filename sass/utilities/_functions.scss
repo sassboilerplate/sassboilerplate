@@ -32,14 +32,14 @@
 
 // Calculate REM values
 
-@function calculateRem($size) {
+@function rem($size) {
   $remSize: $size / 16px;
   @return #{$remSize}rem;
 }
 
 @mixin rem($size) {
   font-size: $size; //Fallback in px
-  font-size: calculateRem($size);
+  font-size: rem($size);
 }
 
 // Call the color palette modifiers in color values
