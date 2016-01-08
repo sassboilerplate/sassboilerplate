@@ -1,11 +1,17 @@
 
 
 # SASS Boilerplate
- **v0.1.3**
+ **v0.1.5**
 
 This is just an SASS starter with SMACSS archtecture and using BEM class rules for you use in any project, and never start your SASS workflow from the scratch anymore. We are certain that it will deal a great foundation for your projects.
 
-Visit our [webpage](http://sassboilerplate.github.io) and checkout our library.
+Visit our [webpage](http://sassboilerplate.github.io) and checkout our library. [SOON]
+
+We are social:
+
+[Facebook](https://www.facebook.com/sassboilerplate)
+
+[Twitter](https://twitter.com/sassboilerplate)
 
 
 ### Project Structure
@@ -46,6 +52,13 @@ sass/
 
 If you aren't familiar in how SMACSS and BEM works, that's also a great reference to learn it in practice.
 
+Notes: 
+
+ - We recomend you use an automator like grunt or gulp to compile with auto-prefixer
+
+
+
+
 ### References: 
 
 
@@ -61,7 +74,7 @@ If you aren't familiar in how SMACSS and BEM works, that's also a great referenc
 
 We need your contribution. But before, we need to explain what is our objective. 
 
-It is create a starter that can be used in any project, and takes all power that BEM__SASS--SMACSS can provide together. So, what would be a perfect boilerplate for you? Here is a great place to share it.
+It is create a starter that can be used in any project, and takes all power that BEM__SASS--SMACSS can provide together. So, what would be a perfect boilerplate for you? Here is a great place to share it. 
 
 We also need your help for improve our documentation even more. We look forward your pull request!
 
